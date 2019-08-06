@@ -25,19 +25,21 @@ class AddBook extends React.Component {
     submitForm = (e) => {
         const {name,genre,authorId} = this.state;
         e.preventDefault();
-        this.props.addBookMutation({
-            variables: {
-                name: name,
-                genre: genre,
-                authorId: authorId
-            },
-            refetchQueries: [{query: getBooksQuery}]
-        })
-        this.setState({
-            name: "",
-            genre: "",
-            authorId: ""
-        });
+        if(name && genre && authorId){
+            this.props.addBookMutation({
+                variables: {
+                    name: name,
+                    genre: genre,
+                    authorId: authorId
+                },
+                refetchQueries: [{query: getBooksQuery}]
+            })
+            this.setState({
+                name: "",
+                genre: "",
+                authorId: ""
+            });
+        }
     }
 
     render(){
