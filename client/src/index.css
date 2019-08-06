@@ -58,6 +58,7 @@ form select, form input {
 
 form button {
   color: #fff;
+  outline: none;
   font-size: 2em;
   background: #AD1457;
   border: 0;
@@ -66,6 +67,7 @@ form button {
   position: absolute;
   bottom: 10px;
   left: 10px;
+  cursor: pointer;
 }
 #book-details {
   position: fixed;
